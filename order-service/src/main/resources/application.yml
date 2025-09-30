@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: order-service
+
+server:
+  port: 8080
+
+aws:
+  region: ${AWS_REGION:ap-northeast-2}
+  accessKeyId: ${AWS_ACCESS_KEY_ID:test}
+  secretKey: ${AWS_SECRET_KEY:test}
+  sqs:
+    endpoint: ${AWS_SQS_ENDPOINT:}  # 실제 AWS 사용 시 비워두기
+    queue-url-standard: ${SQS_QUEUE_URL_STANDARD:}
+    queue-url-fifo: ${SQS_QUEUE_URL_FIFO:}
+
+logging:
+  level:
+    com.example.orderservice: INFO
+    software.amazon.awssdk: WARN

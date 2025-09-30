@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: delivery-service
+
+server:
+  port: 8081
+
+aws:
+  region: ${AWS_REGION:ap-northeast-2}
+  accessKeyId: ${AWS_ACCESS_KEY_ID:test}
+  secretKey: ${AWS_SECRET_KEY:test}
+  sqs:
+    endpoint: ${AWS_SQS_ENDPOINT:}
+    queue-url-standard: ${SQS_QUEUE_URL_STANDARD:}
+    queue-url-standard-dlq: ${SQS_QUEUE_URL_STANDARD_DLQ:}
+    queue-url-fifo: ${SQS_QUEUE_URL_FIFO:}
+    queue-url-fifo-dlq: ${SQS_QUEUE_URL_FIFO_DLQ:}
+
+logging:
+  level:
+    com.example.deliveryservice: INFO
+    software.amazon.awssdk: WARN
